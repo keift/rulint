@@ -1,6 +1,6 @@
 {
   "name": "rulint",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Strict ESLint presets for modern TypeScript projects.",
   "license": "MIT",
   "homepage": "https://github.com/keift/rulint",

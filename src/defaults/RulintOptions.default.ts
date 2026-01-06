@@ -144,7 +144,7 @@ export const ts_rules: { configs: ESLintConfig['rules']; custom: ESLintConfig['r
 export const RulintOptionsDefault: RulintOptions = {
   disabled: false,
 
-  ignores: ['./dist/**'],
+  ignores: ['**/dist'],
 
   js: {
     files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts', '**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs'],
