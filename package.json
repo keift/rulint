@@ -1,10 +1,10 @@
 {
-  "name": "rulint",
-  "version": "1.0.3",
+  "name": "pulint",
+  "version": "1.0.0",
   "description": "Strict ESLint presets for modern TypeScript projects.",
   "license": "MIT",
-  "homepage": "https://github.com/keift/rulint",
-  "bugs": "https://github.com/keift/rulint/issues",
+  "homepage": "https://github.com/keift/pulint",
+  "bugs": "https://github.com/keift/pulint/issues",
   "main": "./dist/main.js",
   "module": "./dist/main.mjs",
   "types": "./dist/main.d.ts",
@@ -30,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/keift/rulint"
+    "url": "https://github.com/keift/pulint"
   },
   "keywords": [
     "eslint",

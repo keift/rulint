@@ -1,6 +1,6 @@
 import type { ESLintConfig } from './ESLintConfig.type';
 
-export type RulintOptions = {
+export type PulintOptions = {
   disabled?: boolean;
 
   ignores?: ESLintConfig['ignores'];

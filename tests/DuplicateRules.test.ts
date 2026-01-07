@@ -1,4 +1,4 @@
-import { js_rules, ts_rules } from '../src/defaults/RulintOptions.default';
+import { js_rules, ts_rules } from '../src/defaults/PulintOptions.default';
 
 const ignored_rules = ['@typescript-eslint/consistent-type-definitions'];
 
