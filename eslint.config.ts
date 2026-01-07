@@ -1,3 +1,3 @@
-import { rulint } from './src/main'
+import { rulint } from './src/main';
 
-export default rulint()
+export default rulint();

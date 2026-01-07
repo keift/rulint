@@ -1,3 +1,3 @@
-import type { Linter } from 'eslint'
+import type { Linter } from 'eslint';
 
-export type ESLintConfig = Linter.Config
+export type ESLintConfig = Linter.Config;

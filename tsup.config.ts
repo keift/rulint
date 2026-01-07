@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsup'
+import { defineConfig } from 'tsup';
 
 export default defineConfig({
   bundle: true,
@@ -9,4 +9,4 @@ export default defineConfig({
   outDir: './dist',
   format: ['esm', 'cjs'],
   entry: ['./src/main.ts']
-})
+});

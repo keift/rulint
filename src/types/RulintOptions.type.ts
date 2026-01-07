@@ -1,33 +1,33 @@
-import type { ESLintConfig } from './ESLintConfig.type'
+import type { ESLintConfig } from './ESLintConfig.type';
 
 export type RulintOptions = {
-  disabled?: boolean
+  disabled?: boolean;
 
-  ignores?: ESLintConfig['ignores']
+  ignores?: ESLintConfig['ignores'];
 
   append?: {
-    'no-restricted-imports'?: object[]
+    'no-restricted-imports'?: object[];
     'no-restricted-syntax'?: {
-      selector: string
-      message: string
-    }[]
-  }
+      selector: string;
+      message: string;
+    }[];
+  };
 
   js?: {
-    files?: ESLintConfig['files']
-    languageOptions?: ESLintConfig['languageOptions']
-    plugins?: ESLintConfig['plugins']
+    files?: ESLintConfig['files'];
+    languageOptions?: ESLintConfig['languageOptions'];
+    plugins?: ESLintConfig['plugins'];
 
-    rules?: ESLintConfig['rules']
-  }
+    rules?: ESLintConfig['rules'];
+  };
 
   ts?: {
-    files?: ESLintConfig['files']
-    languageOptions?: ESLintConfig['languageOptions']
-    plugins?: ESLintConfig['plugins']
+    files?: ESLintConfig['files'];
+    languageOptions?: ESLintConfig['languageOptions'];
+    plugins?: ESLintConfig['plugins'];
 
-    rules?: ESLintConfig['rules']
-  }
+    rules?: ESLintConfig['rules'];
+  };
 
-  config?: ESLintConfig[]
-}
+  config?: ESLintConfig[];
+};
