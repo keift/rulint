@@ -32,7 +32,7 @@ export const rulint = (options: RulintOptions = RulintOptionsDefault): ESLintCon
         rules: options.ts?.rules
       },
 
-      ...(options.config ?? [])
+      ...(options.configs ?? [])
     ];
-  } else return [{ ignores: options.ignores }, ...(options.config ?? [])];
+  } else return [{ ignores: options.ignores }, ...(options.configs ?? [])];
 };

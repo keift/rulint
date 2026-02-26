@@ -29,5 +29,5 @@ export type RulintOptions = {
     rules?: ESLintConfig['rules'];
   };
 
-  config?: ESLintConfig[];
+  configs?: ESLintConfig[];
 };
