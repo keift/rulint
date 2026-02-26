@@ -15,7 +15,7 @@ export const rulint = (options: RulintOptions = RulintOptionsDefault): ESLintCon
   return [
     { ignores: options.ignores },
 
-    EslintPluginZod.configs.recommended,
+    options.enabled === true ? EslintPluginZod.configs.recommended : {},
 
     {
       files: options.js?.files,
