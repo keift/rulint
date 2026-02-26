@@ -1,6 +1,6 @@
 {
   "name": "rulint",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "Strict ESLint presets for modern TypeScript projects.",
   "license": "MIT",
   "homepage": "https://github.com/keift/rulint",
@@ -19,6 +19,7 @@
     "@types/lodash.merge": "^4.6.9",
     "@types/node": "latest",
     "eslint": "latest",
+    "eslint-plugin-zod": "latest",
     "jiti": "latest",
     "lodash.merge": "^4.6.2",
     "typescript": "latest",

@@ -152,12 +152,12 @@ export const ts_rules: { configs: ESLintConfig['rules']; custom: ESLintConfig['r
 };
 
 export const RulintOptionsDefault: RulintOptions = {
-  disabled: false,
+  enabled: true,
 
   ignores: ['**/dist'],
 
   js: {
-    files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts', '**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs'],
+    files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx', '**/*.js', '**/*.jsx', '**/*.mjs', '**/*.mjsx', '**/*.cjs', '**/*.cjsx'],
     languageOptions: {},
     plugins: {},
 
@@ -168,7 +168,7 @@ export const RulintOptionsDefault: RulintOptions = {
   },
 
   ts: {
-    files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts'],
+    files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx'],
     languageOptions: {
       parser: TSESLint.parser,
       parserOptions: {
