@@ -12,27 +12,25 @@ export const rulint = (options: RulintOptions = RulintOptionsDefault): ESLintCon
   if (options.append?.['no-restricted-imports'] && typeof options.js?.rules?.['no-restricted-imports'] === 'object') options.js.rules['no-restricted-imports'] = [...options.js.rules['no-restricted-imports'], ...options.append['no-restricted-imports']];
   if (options.append?.['no-restricted-syntax'] && typeof options.js?.rules?.['no-restricted-syntax'] === 'object') options.js.rules['no-restricted-syntax'] = [...options.js.rules['no-restricted-syntax'], ...options.append['no-restricted-syntax']];
 
-  if (options.enabled === true) {
-    return [
-      { ignores: options.ignores },
+  return [
+    { ignores: options.ignores },
 
-      EslintPluginZod.configs.recommended,
+    ...(options.enabled === true ? [EslintPluginZod.configs.recommended] : []),
 
-      {
-        files: options.js?.files,
-        languageOptions: options.js?.languageOptions,
-        plugins: options.js?.plugins,
-        rules: options.js?.rules
-      },
+    {
+      files: options.js?.files,
+      languageOptions: options.js?.languageOptions,
+      plugins: options.js?.plugins,
+      rules: options.enabled === true ? options.js?.rules : {}
+    },
 
-      {
-        files: options.ts?.files,
-        languageOptions: options.ts?.languageOptions,
-        plugins: options.ts?.plugins,
-        rules: options.ts?.rules
-      },
+    {
+      files: options.ts?.files,
+      languageOptions: options.ts?.languageOptions,
+      plugins: options.ts?.plugins,
+      rules: options.enabled === true ? options.ts?.rules : {}
+    },
 
-      ...(options.configs ?? [])
-    ];
-  } else return [{ ignores: options.ignores }, ...(options.configs ?? [])];
+    ...(options.configs ?? [])
+  ];
 };
