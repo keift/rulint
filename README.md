@@ -55,6 +55,7 @@ Strict ESLint presets for modern TypeScript projects.
 - Enforces type safety
 - Prohibits potentially unsafe patterns
 - Encourages modern syntax
+- Encourages more accurate [Zod](https://npmjs.com/package/zod) usage ([eslint-plugin-zod](https://npmjs.com/package/eslint-plugin-zod))
 - Encourages the use of arrow functions
 - Encourages the use of try/catch
 - Bans `var` and warns about proper use of `const` and `let`
