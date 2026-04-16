@@ -10,7 +10,7 @@
   "types": "./dist/main.d.ts",
   "scripts": {
     "tests": "bun run lint && bun test",
-    "build": "tsup",
+    "build": "tsdown",
     "prettier": "prettier --write ./",
     "lint": "eslint ./"
   },
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "prettier": "latest",
-    "tsup": "latest"
+    "tsdown": "latest"
   },
   "repository": {
     "type": "git",

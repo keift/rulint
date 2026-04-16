@@ -9,6 +9,6 @@ if (Package.dependencies.typescript !== 'latest') throw new Error('❌ Error: ty
 if (Package.dependencies['typescript-eslint'] !== 'latest') throw new Error('❌ Error: typescript-eslint');
 
 if (Package.devDependencies.prettier !== 'latest') throw new Error('❌ Error: prettier');
-if (Package.devDependencies.tsup !== 'latest') throw new Error('❌ Error: tsup');
+if (Package.devDependencies.tsdown !== 'latest') throw new Error('❌ Error: tsdown');
 
 console.log('✅ Success');
