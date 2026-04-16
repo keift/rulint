@@ -10,6 +10,7 @@
     "moduleResolution": "bundler",
     "lib": ["DOM", "ESNext"],
 
+    "types": ["*"],
     "typeRoots": ["./types", "./node_modules/@types"]
   }
 }

@@ -161,6 +161,7 @@ Suggested uses are as follows. We recommend using [Prettier](https://npmjs.com/p
 >     "moduleResolution": "bundler",
 >     "lib": ["DOM", "ESNext"],
 >
+>     "types": ["*"],
 >     "typeRoots": ["./types", "./node_modules/@types"]
 >   }
 > }
