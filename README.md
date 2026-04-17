@@ -152,7 +152,6 @@ Suggested uses are as follows. We recommend using [Prettier](https://npmjs.com/p
 > {
 >   "compilerOptions": {
 >     "strict": true,
->     "esModuleInterop": true,
 >
 >     "outDir": "./dist",
 >     "target": "ESNext",

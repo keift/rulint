@@ -1,4 +1,4 @@
-import EslintPluginZod from 'eslint-plugin-zod';
+import ESLintPluginZod from 'eslint-plugin-zod';
 import merge from 'lodash.merge';
 
 import { RulintOptionsDefault } from '../defaults/RulintOptions.default';
@@ -15,7 +15,7 @@ export const rulint = (options: RulintOptions = RulintOptionsDefault): ESLintCon
   return [
     { ignores: options.ignores },
 
-    ...(options.enabled === true ? [EslintPluginZod.configs.recommended] : []),
+    ...(options.enabled === true ? [ESLintPluginZod.configs.recommended] : []),
 
     {
       files: options.js?.files,
