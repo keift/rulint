@@ -12,7 +12,8 @@ const dependencies = {
 
 const dev_dependencies = {
   prettier: 'latest',
-  tsdown: 'latest'
+  tsdown: 'latest',
+  unrun: 'latest'
 };
 
 for (const [_dependency, version] of Object.entries(dependencies)) {
