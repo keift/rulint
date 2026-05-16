@@ -1,8 +1,8 @@
 import TSESLint from 'typescript-eslint';
 import ESLintJS from '@eslint/js';
 
-import type { ESLintConfig } from '../types/eslint-config';
-import type { RulintOptions } from '../types/rulint-options';
+import type { ESLintConfig } from '../types/eslint_config';
+import type { RulintOptions } from '../types/rulint_options';
 
 export const js_rules: { configs: ESLintConfig['rules']; custom: ESLintConfig['rules'] } = {
   configs: {

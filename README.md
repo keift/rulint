@@ -1,9 +1,9 @@
-[RulintOptionsDefault]: ./src/defaults/rulint-options.ts
+[RulintOptionsDefault]: ./src/defaults/rulint_options.ts
 
 <!---->
 
-[ESLintConfig]: ./src/types/eslint-config.ts
-[RulintOptions]: ./src/types/rulint-options.ts
+[ESLintConfig]: ./src/types/eslint_config.ts
+[RulintOptions]: ./src/types/rulint_options.ts
 
 <div align="center">
   <br/>

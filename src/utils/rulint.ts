@@ -1,10 +1,10 @@
 import ESLintPluginZod from 'eslint-plugin-zod';
 import merge from 'lodash.merge';
 
-import { RulintOptionsDefault } from '../defaults/rulint-options';
+import { RulintOptionsDefault } from '../defaults/rulint_options';
 
-import type { ESLintConfig } from '../types/eslint-config';
-import type { RulintOptions } from '../types/rulint-options';
+import type { ESLintConfig } from '../types/eslint_config';
+import type { RulintOptions } from '../types/rulint_options';
 
 export const rulint = (options: RulintOptions = RulintOptionsDefault): ESLintConfig[] => {
   options = merge({}, RulintOptionsDefault, options);

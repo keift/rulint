@@ -1,4 +1,4 @@
-import type { ESLintConfig } from './eslint-config';
+import type { ESLintConfig } from './eslint_config';
 
 export type RulintOptions = {
   enabled?: boolean;
