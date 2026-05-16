@@ -1,3 +1,3 @@
-export * from './utils/Rulint.util';
+export * from './utils/rulint';
 
-export type * from './exports/Types.export';
+export type * from './exports/types';
