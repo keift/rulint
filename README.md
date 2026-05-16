@@ -10,7 +10,7 @@
 
 <!---->
 
-[RulintOptionsDefault]: ./src/defaults/RulintOptions.default.ts
+[RulintOptionsDefault]: ./src/defaults/rulint-options.ts
 
 <!---->
 
