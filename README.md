@@ -14,8 +14,8 @@
 
 <!---->
 
-[ESLintConfig]: ./src/types/ESLintConfig.type.ts
-[RulintOptions]: ./src/types/RulintOptions.type.ts
+[ESLintConfig]: ./src/types/eslint-config.ts
+[RulintOptions]: ./src/types/rulint-options.ts
 
 <div align="center">
   <br/>
