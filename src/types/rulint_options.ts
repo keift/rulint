@@ -13,21 +13,8 @@ export type RulintOptions = {
     }[];
   };
 
-  js?: {
-    files?: ESLintConfig['files'];
-    languageOptions?: ESLintConfig['languageOptions'];
-    plugins?: ESLintConfig['plugins'];
-
-    rules?: ESLintConfig['rules'];
-  };
-
-  ts?: {
-    files?: ESLintConfig['files'];
-    languageOptions?: ESLintConfig['languageOptions'];
-    plugins?: ESLintConfig['plugins'];
-
-    rules?: ESLintConfig['rules'];
-  };
+  js?: ESLintConfig;
+  ts?: ESLintConfig;
 
   configs?: ESLintConfig[];
 };

@@ -160,7 +160,6 @@ export const RulintOptionsDefault: RulintOptions = {
     files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx', '**/*.js', '**/*.jsx', '**/*.mjs', '**/*.mjsx', '**/*.cjs', '**/*.cjsx'],
     languageOptions: {},
     plugins: {},
-
     rules: {
       ...js_rules.configs,
       ...js_rules.custom
@@ -179,7 +178,6 @@ export const RulintOptionsDefault: RulintOptions = {
     plugins: {
       '@typescript-eslint': TSESLint.plugin
     },
-
     rules: {
       ...ts_rules.configs,
       ...ts_rules.custom
