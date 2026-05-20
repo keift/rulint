@@ -4,7 +4,12 @@ import ESLintJS from '@eslint/js';
 import type { ESLintConfig } from '../types/eslint_config';
 import type { RulintOptions } from '../types/rulint_options';
 
-export const js_rules: { configs: ESLintConfig['rules']; custom: ESLintConfig['rules'] } = {
+type Rules = {
+  configs: ESLintConfig['rules'];
+  custom: ESLintConfig['rules'];
+};
+
+export const js_rules: Rules = {
   configs: {
     ...ESLintJS.configs.recommended.rules,
 
@@ -135,7 +140,7 @@ export const js_rules: { configs: ESLintConfig['rules']; custom: ESLintConfig['r
   }
 };
 
-export const ts_rules: { configs: ESLintConfig['rules']; custom: ESLintConfig['rules'] } = {
+export const ts_rules: Rules = {
   configs: {
     ...(Object.assign({}, ...TSESLint.configs.strictTypeChecked.map((item) => item.rules ?? {})) as ESLintConfig['rules']),
     ...(Object.assign({}, ...TSESLint.configs.stylisticTypeChecked.map((item) => item.rules ?? {})) as ESLintConfig['rules'])
