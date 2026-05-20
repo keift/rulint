@@ -2,6 +2,6 @@
 
 ## v1.1.0
 
-### Added:
+### Added
 
 - **Zod linter.** Recommended settings for the [eslint-plugin-zod](https://npmjs.com/package/eslint-plugin-zod) have been added.
