@@ -148,7 +148,7 @@ Suggested uses are as follows. We recommend using [Prettier](https://npmjs.com/p
 >     "lib": ["ESNext", "DOM"],
 >
 >     "types": ["*"],
->     "typeRoots": ["./types", "./node_modules/@types"]
+>     "typeRoots": ["./src/types", "./node_modules/@types"]
 >   }
 > }
 > ```
