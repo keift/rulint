@@ -179,6 +179,8 @@ Suggested uses are as follows. We recommend using [Prettier](https://npmjs.com/p
 
 <!-- START: rules-table -->
 
+_Rulint adds **199** rules to your workspace._
+
 | Rule                                                                                                                                                                                | Description                                                                                                                     |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | [@zod/array-style](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/array-style.md)                                                         | Enforce consistent Zod array style.                                                                                             |

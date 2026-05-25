@@ -36,11 +36,13 @@ const js_rules = Object.entries(RulintOptionsDefault.js?.rules as Record<string,
   .map(([name]) => [`[${name}](https://eslint.org/docs/latest/rules/${name})`, `${eslint_rule_descriptions.find((rule) => rule.name === name)?.description ?? 'None'}.`])
   .sort((first, second) => (first[0] < second[0] ? -1 : first[0] > second[0] ? 1 : 0));
 
+const rules = [...zod_rules, ...ts_rules, ...js_rules];
+
 const table = json2md([
   {
     table: {
       headers: ['Rule', 'Description'],
-      rows: [...zod_rules, ...ts_rules, ...js_rules]
+      rows: rules
     }
   }
 ]);
@@ -52,6 +54,8 @@ await fs.writeFile(
   Readme.replace(
     /<!-- START: rules-table -->[\s\S]*?<!-- END: rules-table -->/g,
     `<!-- START: rules-table -->
+
+_Rulint adds **${String(rules.length)}** rules to your workspace._
 
 ${table.trim()}
 
