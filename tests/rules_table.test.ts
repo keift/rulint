@@ -12,46 +12,46 @@ type Plugin = {
   rules: Record<string, { meta: { docs: { description: string } } }>;
 };
 
-const zod_rule_descriptions = Object.entries((ESLintPluginZod as unknown as Plugin).rules).map(([name, rule]) => {
+const zod_rule_metas = Object.entries((ESLintPluginZod as unknown as Plugin).rules).map(([name, rule]) => {
   const description = rule.meta.docs.description.endsWith('.') ? rule.meta.docs.description : `${rule.meta.docs.description}.`;
 
   return { name, description };
 });
 
-const tseslint_rule_descriptions = Object.entries((TSESlint.plugin as unknown as Plugin).rules).map(([name, rule]) => {
+const tseslint_rule_metas = Object.entries((TSESlint.plugin as unknown as Plugin).rules).map(([name, rule]) => {
   const description = rule.meta.docs.description.endsWith('.') ? rule.meta.docs.description : `${rule.meta.docs.description}.`;
 
   return { name, description };
 });
 
-const eslint_rule_descriptions = ([...builtinRules.entries()] as [string, Plugin['rules'][string]][]).map(([name, rule]) => {
+const eslint_rule_metas = ([...builtinRules.entries()] as [string, Plugin['rules'][string]][]).map(([name, rule]) => {
   const description = rule.meta.docs.description.endsWith('.') ? rule.meta.docs.description : `${rule.meta.docs.description}.`;
 
   return { name, description };
 });
 
-const zod_rules = Object.entries(ESLintPluginZod.configs.recommended.rules as Record<string, string | string[]>)
+const zod_rule_rows = Object.entries(ESLintPluginZod.configs.recommended.rules as Record<string, string | string[]>)
   .filter(([name, config]) => name.startsWith('zod') && (Array.isArray(config) ? config[0] === 'error' : config === 'error'))
-  .map(([name]) => [`[@${name}](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/${name.replaceAll('zod/', '')}.md)`, zod_rule_descriptions.find((rule) => rule.name === name.replaceAll('zod/', ''))?.description ?? 'None.'])
+  .map(([name]) => [`[@${name}](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/${name.replaceAll('zod/', '')}.md)`, zod_rule_metas.find((rule) => rule.name === name.replaceAll('zod/', ''))?.description ?? 'None.'])
   .sort((first, second) => (first[0] < second[0] ? -1 : first[0] > second[0] ? 1 : 0));
 
-const ts_rules = Object.entries(RulintOptionsDefault.ts?.rules as Record<string, string | string[]>)
+const ts_rule_rows = Object.entries(RulintOptionsDefault.ts?.rules as Record<string, string | string[]>)
   .filter(([name, config]) => name.startsWith('@typescript-eslint') && (Array.isArray(config) ? config[0] === 'error' : config === 'error'))
-  .map(([name]) => [`[${name}](https://typescript-eslint.io/rules/${name.replaceAll('@typescript-eslint/', '')})`, tseslint_rule_descriptions.find((rule) => rule.name === name.replaceAll('@typescript-eslint/', ''))?.description ?? 'None.'])
+  .map(([name]) => [`[${name}](https://typescript-eslint.io/rules/${name.replaceAll('@typescript-eslint/', '')})`, tseslint_rule_metas.find((rule) => rule.name === name.replaceAll('@typescript-eslint/', ''))?.description ?? 'None.'])
   .sort((first, second) => (first[0] < second[0] ? -1 : first[0] > second[0] ? 1 : 0));
 
-const js_rules = Object.entries(RulintOptionsDefault.js?.rules as Record<string, string | string[]>)
+const js_rule_rows = Object.entries(RulintOptionsDefault.js?.rules as Record<string, string | string[]>)
   .filter(([, config]) => (Array.isArray(config) ? config[0] === 'error' : config === 'error'))
-  .map(([name]) => [`[${name}](https://eslint.org/docs/latest/rules/${name})`, eslint_rule_descriptions.find((rule) => rule.name === name)?.description ?? 'None.'])
+  .map(([name]) => [`[${name}](https://eslint.org/docs/latest/rules/${name})`, eslint_rule_metas.find((rule) => rule.name === name)?.description ?? 'None.'])
   .sort((first, second) => (first[0] < second[0] ? -1 : first[0] > second[0] ? 1 : 0));
 
-const rules = [...zod_rules, ...ts_rules, ...js_rules];
+const rule_rows = [...zod_rule_rows, ...ts_rule_rows, ...js_rule_rows];
 
 const table = json2md([
   {
     table: {
       headers: ['Rule', 'Description'],
-      rows: rules
+      rows: rule_rows
     }
   }
 ]);
@@ -66,7 +66,7 @@ await fs.writeFile(
 
       `<!-- START: rules-table -->
 
-_Rulint adds **${String(rules.length)}** rules to your workspace._
+_Rulint adds **${String(rule_rows.length)}** rules to your workspace._
 
 ${table.trim()}
 
