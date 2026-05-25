@@ -14,19 +14,19 @@ const eslint_rule_descriptions = Object.values(((await (await fetch('https://raw
 const ts_rules = Object.entries(RulintOptionsDefault.ts?.rules as Record<string, string | string[]>)
   .filter(([name, config]) => name.startsWith('@typescript-eslint') && (Array.isArray(config) ? config[0] === 'error' : config === 'error'))
   .map(([name]) => {
-    return [name, `\`ts\``, `[Click](https://typescript-eslint.io/rules/${name.replaceAll('@typescript-eslint/', '')})`, `${tseslint_rule_descriptions.find((rule) => rule.name === name.replaceAll('@typescript-eslint/', ''))?.description ?? 'None'}.`];
+    return [`[${name}](https://typescript-eslint.io/rules/${name.replaceAll('@typescript-eslint/', '')})`, `${tseslint_rule_descriptions.find((rule) => rule.name === name.replaceAll('@typescript-eslint/', ''))?.description ?? 'None'}.`];
   });
 
 const js_rules = Object.entries(RulintOptionsDefault.js?.rules as Record<string, string | string[]>)
   .filter(([, config]) => (Array.isArray(config) ? config[0] === 'error' : config === 'error'))
   .map(([name]) => {
-    return [name, `\`ts\`, \`js\``, `[Click](https://eslint.org/docs/latest/rules/${name})`, `${eslint_rule_descriptions.find((rule) => rule.name === name)?.description ?? 'None'}.`];
+    return [`[${name}](https://eslint.org/docs/latest/rules/${name})`, `${eslint_rule_descriptions.find((rule) => rule.name === name)?.description ?? 'None'}.`];
   });
 
 const table = json2md([
   {
     table: {
-      headers: ['Rule', 'Target', 'Source', 'Description'],
+      headers: ['Rule', 'Description'],
       rows: [...ts_rules, ...js_rules]
     }
   }
