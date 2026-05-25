@@ -10,22 +10,6 @@ type Rules = {
   custom: ESLintConfig['rules'];
 };
 
-export const ts_rules: Rules = {
-  configs: {
-    ...(Object.assign({}, ...tseslint.configs.strictTypeChecked.map((item) => item.rules ?? {})) as ESLintConfig['rules']),
-    ...(Object.assign({}, ...tseslint.configs.stylisticTypeChecked.map((item) => item.rules ?? {})) as ESLintConfig['rules'])
-  },
-
-  custom: {
-    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
-    '@typescript-eslint/consistent-type-exports': 'error',
-    '@typescript-eslint/consistent-type-imports': 'error',
-    '@typescript-eslint/explicit-member-accessibility': 'error',
-    '@typescript-eslint/prefer-readonly': 'error',
-    '@typescript-eslint/strict-boolean-expressions': 'error'
-  }
-};
-
 export const js_rules: Rules = {
   configs: {
     ...eslint.configs.recommended.rules,
@@ -159,10 +143,38 @@ export const js_rules: Rules = {
   }
 };
 
+export const ts_rules: Rules = {
+  configs: {
+    ...(Object.assign({}, ...tseslint.configs.strictTypeChecked.map((item) => item.rules ?? {})) as ESLintConfig['rules']),
+    ...(Object.assign({}, ...tseslint.configs.stylisticTypeChecked.map((item) => item.rules ?? {})) as ESLintConfig['rules'])
+  },
+
+  custom: {
+    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+    '@typescript-eslint/consistent-type-exports': 'error',
+    '@typescript-eslint/consistent-type-imports': 'error',
+    '@typescript-eslint/explicit-member-accessibility': 'error',
+    '@typescript-eslint/prefer-readonly': 'error',
+    '@typescript-eslint/strict-boolean-expressions': 'error'
+  }
+};
+
 export const RulintOptionsDefault: RulintOptions = {
   enabled: true,
 
   ignores: ['**/dist'],
+
+  js: {
+    files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx', '**/*.js', '**/*.jsx', '**/*.mjs', '**/*.mjsx', '**/*.cjs', '**/*.cjsx'],
+    languageOptions: {},
+    plugins: {
+      zod: eslint_plugin_zod
+    },
+    rules: {
+      ...js_rules.configs,
+      ...js_rules.custom
+    }
+  },
 
   ts: {
     files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx'],
@@ -179,18 +191,6 @@ export const RulintOptionsDefault: RulintOptions = {
     rules: {
       ...ts_rules.configs,
       ...ts_rules.custom
-    }
-  },
-
-  js: {
-    files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx', '**/*.js', '**/*.jsx', '**/*.mjs', '**/*.mjsx', '**/*.cjs', '**/*.cjsx'],
-    languageOptions: {},
-    plugins: {
-      zod: eslint_plugin_zod
-    },
-    rules: {
-      ...js_rules.configs,
-      ...js_rules.custom
     }
   }
 };

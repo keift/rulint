@@ -43,7 +43,7 @@ const zod_rule_rows = Object.entries(RulintOptionsDefault.js?.rules as Record<st
   .map(([name]) => [`[${name}](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/${name.replaceAll('zod/', '')}.md)`, zod_rule_metas.find((rule) => rule.name === name.replaceAll('zod/', ''))?.description ?? 'None.'])
   .sort((first, second) => (first[0] < second[0] ? -1 : first[0] > second[0] ? 1 : 0));
 
-const rule_rows = [...zod_rule_rows, ...tseslint_rule_rows, ...eslint_rule_rows];
+const rule_rows = [...eslint_rule_rows, ...tseslint_rule_rows, ...zod_rule_rows];
 
 const table = json2md([
   {
