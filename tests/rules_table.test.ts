@@ -12,29 +12,23 @@ type Plugin = {
   rules: Record<string, { meta: { docs: { description: string } } }>;
 };
 
-const zod_rule_descriptions = Object.entries((ESLintPluginZod as unknown as Plugin).rules)
-  .filter(([, value]) => value.meta.docs.description)
-  .map(([name, rule]) => {
-    const description = rule.meta.docs.description.endsWith('.') ? rule.meta.docs.description : `${rule.meta.docs.description}.`;
+const zod_rule_descriptions = Object.entries((ESLintPluginZod as unknown as Plugin).rules).map(([name, rule]) => {
+  const description = rule.meta.docs.description.endsWith('.') ? rule.meta.docs.description : `${rule.meta.docs.description}.`;
 
-    return { name, description };
-  });
+  return { name, description };
+});
 
-const tseslint_rule_descriptions = Object.entries((TSESlint.plugin as unknown as Plugin).rules)
-  .filter(([, value]) => value.meta.docs.description)
-  .map(([name, rule]) => {
-    const description = rule.meta.docs.description.endsWith('.') ? rule.meta.docs.description : `${rule.meta.docs.description}.`;
+const tseslint_rule_descriptions = Object.entries((TSESlint.plugin as unknown as Plugin).rules).map(([name, rule]) => {
+  const description = rule.meta.docs.description.endsWith('.') ? rule.meta.docs.description : `${rule.meta.docs.description}.`;
 
-    return { name, description };
-  });
+  return { name, description };
+});
 
-const eslint_rule_descriptions = ([...builtinRules.entries()] as [string, Plugin['rules'][string]][])
-  .filter(([, value]) => value.meta.docs.description)
-  .map(([name, rule]) => {
-    const description = rule.meta.docs.description.endsWith('.') ? rule.meta.docs.description : `${rule.meta.docs.description}.`;
+const eslint_rule_descriptions = ([...builtinRules.entries()] as [string, Plugin['rules'][string]][]).map(([name, rule]) => {
+  const description = rule.meta.docs.description.endsWith('.') ? rule.meta.docs.description : `${rule.meta.docs.description}.`;
 
-    return { name, description };
-  });
+  return { name, description };
+});
 
 const zod_rules = Object.entries(ESLintPluginZod.configs.recommended.rules as Record<string, string | string[]>)
   .filter(([name, config]) => name.startsWith('zod') && (Array.isArray(config) ? config[0] === 'error' : config === 'error'))
