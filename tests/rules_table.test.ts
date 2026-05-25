@@ -1,8 +1,8 @@
 import TSESlint from 'typescript-eslint';
 import { builtinRules } from 'eslint/use-at-your-own-risk';
 import ESLintPluginZod from 'eslint-plugin-zod';
-import Prettier from 'prettier';
 import json2md from 'json2md';
+import Prettier from 'prettier';
 import fs from 'fs/promises';
 import path from 'path';
 
