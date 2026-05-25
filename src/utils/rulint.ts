@@ -1,4 +1,3 @@
-import ESLintPluginZod from 'eslint-plugin-zod';
 import merge from 'lodash.merge';
 
 import { RulintOptionsDefault } from '../defaults/rulint_options';
@@ -28,8 +27,6 @@ export const rulint = (options: RulintOptions = RulintOptionsDefault): ESLintCon
       plugins: options.ts?.plugins,
       rules: options.enabled === true ? options.ts?.rules : {}
     },
-
-    ...(options.enabled === true ? [ESLintPluginZod.configs.recommended] : []),
 
     ...(options.configs ?? [])
   ];

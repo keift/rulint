@@ -1,5 +1,6 @@
-import TSESLint from 'typescript-eslint';
-import ESLintJS from '@eslint/js';
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import eslint_plugin_zod from 'eslint-plugin-zod';
 
 import type { ESLintConfig } from '../types/eslint_config';
 import type { RulintOptions } from '../types/rulint_options';
@@ -11,8 +12,8 @@ type Rules = {
 
 export const ts_rules: Rules = {
   configs: {
-    ...(Object.assign({}, ...TSESLint.configs.strictTypeChecked.map((item) => item.rules ?? {})) as ESLintConfig['rules']),
-    ...(Object.assign({}, ...TSESLint.configs.stylisticTypeChecked.map((item) => item.rules ?? {})) as ESLintConfig['rules'])
+    ...(Object.assign({}, ...tseslint.configs.strictTypeChecked.map((item) => item.rules ?? {})) as ESLintConfig['rules']),
+    ...(Object.assign({}, ...tseslint.configs.stylisticTypeChecked.map((item) => item.rules ?? {})) as ESLintConfig['rules'])
   },
 
   custom: {
@@ -27,11 +28,11 @@ export const ts_rules: Rules = {
 
 export const js_rules: Rules = {
   configs: {
-    ...ESLintJS.configs.recommended.rules,
+    ...eslint.configs.recommended.rules,
 
     ...(Object.assign(
       {},
-      ...TSESLint.configs.strictTypeChecked.map((item) =>
+      ...tseslint.configs.strictTypeChecked.map((item) =>
         Object.fromEntries(
           Object.entries(item.rules ?? {})
             .filter(([key]) => !key.startsWith('@typescript-eslint'))
@@ -42,7 +43,7 @@ export const js_rules: Rules = {
 
     ...(Object.assign(
       {},
-      ...TSESLint.configs.stylisticTypeChecked.map((item) =>
+      ...tseslint.configs.stylisticTypeChecked.map((item) =>
         Object.fromEntries(
           Object.entries(item.rules ?? {})
             .filter(([key]) => !key.startsWith('@typescript-eslint'))
@@ -51,7 +52,9 @@ export const js_rules: Rules = {
       )
     ) as ESLintConfig['rules']),
 
-    ...TSESLint.configs.eslintRecommended.rules
+    ...tseslint.configs.eslintRecommended.rules,
+
+    ...eslint_plugin_zod.configs.recommended.rules
   },
 
   custom: {
@@ -164,14 +167,14 @@ export const RulintOptionsDefault: RulintOptions = {
   ts: {
     files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx'],
     languageOptions: {
-      parser: TSESLint.parser,
+      parser: tseslint.parser,
       parserOptions: {
         project: './tsconfig.json',
         sourceType: 'module'
       }
     },
     plugins: {
-      '@typescript-eslint': TSESLint.plugin
+      '@typescript-eslint': tseslint.plugin
     },
     rules: {
       ...ts_rules.configs,
@@ -182,7 +185,9 @@ export const RulintOptionsDefault: RulintOptions = {
   js: {
     files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx', '**/*.js', '**/*.jsx', '**/*.mjs', '**/*.mjsx', '**/*.cjs', '**/*.cjsx'],
     languageOptions: {},
-    plugins: {},
+    plugins: {
+      zod: eslint_plugin_zod
+    },
     rules: {
       ...js_rules.configs,
       ...js_rules.custom
