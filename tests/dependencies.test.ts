@@ -11,6 +11,8 @@ const dependencies = {
 };
 
 const dev_dependencies = {
+  '@types/json2md': 'latest',
+  json2md: 'latest',
   prettier: 'latest',
   tsdown: 'latest',
   unrun: 'latest'

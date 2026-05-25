@@ -15,8 +15,6 @@ export const rulint = (options: RulintOptions = RulintOptionsDefault): ESLintCon
   return [
     { ignores: options.ignores },
 
-    ...(options.enabled === true ? [ESLintPluginZod.configs.recommended] : []),
-
     {
       files: options.js?.files,
       languageOptions: options.js?.languageOptions,
@@ -30,6 +28,8 @@ export const rulint = (options: RulintOptions = RulintOptionsDefault): ESLintCon
       plugins: options.ts?.plugins,
       rules: options.enabled === true ? options.ts?.rules : {}
     },
+
+    ...(options.enabled === true ? [ESLintPluginZod.configs.recommended] : []),
 
     ...(options.configs ?? [])
   ];

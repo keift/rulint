@@ -1,6 +1,6 @@
 {
   "name": "rulint",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "Strict ESLint presets for modern TypeScript projects.",
   "license": "MIT",
   "homepage": "https://github.com/keift/rulint",
@@ -26,6 +26,8 @@
     "typescript-eslint": "latest"
   },
   "devDependencies": {
+    "@types/json2md": "latest",
+    "json2md": "latest",
     "prettier": "latest",
     "tsdown": "latest",
     "unrun": "latest"

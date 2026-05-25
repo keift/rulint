@@ -13,8 +13,8 @@ export type RulintOptions = {
     }[];
   };
 
-  js?: ESLintConfig;
   ts?: ESLintConfig;
+  js?: ESLintConfig;
 
   configs?: ESLintConfig[];
 };
