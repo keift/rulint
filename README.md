@@ -179,7 +179,7 @@ Suggested uses are as follows. We recommend using [Prettier](https://npmjs.com/p
 
 <!-- START: rules-table -->
 
-_Rulint adds **199** rules to your workspace._
+_Rulint adds **200** rules to your workspace._
 
 | Rule                                                                                                                                                                                | Description                                                                                                                    |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -196,6 +196,7 @@ _Rulint adds **199** rules to your workspace._
 | [@zod/no-number-schema-with-safe](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/no-number-schema-with-safe.md)                           | Disallow deprecated `z.number().safe()`. Use `z.int()`; `.safe()` is now identical to `.int()`.                                |
 | [@zod/no-number-schema-with-step](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/no-number-schema-with-step.md)                           | Disallow deprecated `z.number().step()`. Use `.multipleOf()` instead.                                                          |
 | [@zod/no-optional-and-default-together](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/no-optional-and-default-together.md)               | Disallow using both `.optional()` and `.default()` on the same Zod schema.                                                     |
+| [@zod/no-promise-schema](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/no-promise-schema.md)                                             | Disallow deprecated `z.promise()` schemas.                                                                                     |
 | [@zod/no-schema-with-is-nullable](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/no-schema-with-is-nullable.md)                           | Disallow deprecated `.isNullable()` on a Zod schema; use `safeParse(null).success` instead.                                    |
 | [@zod/no-schema-with-is-optional](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/no-schema-with-is-optional.md)                           | Disallow deprecated `.isOptional()` on a Zod schema; use `safeParse(undefined).success` instead.                               |
 | [@zod/no-string-schema-with-uuid](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/no-string-schema-with-uuid.md)                           | Disallow usage of `z.string().uuid()` in favor of the dedicated `z.uuid()` schema.                                             |
