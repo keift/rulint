@@ -15,13 +15,15 @@ const ts_rules = Object.entries(RulintOptionsDefault.ts?.rules as Record<string,
   .filter(([name, config]) => name.startsWith('@typescript-eslint') && (Array.isArray(config) ? config[0] === 'error' : config === 'error'))
   .map(([name]) => {
     return [`[${name}](https://typescript-eslint.io/rules/${name.replaceAll('@typescript-eslint/', '')})`, `${tseslint_rule_descriptions.find((rule) => rule.name === name.replaceAll('@typescript-eslint/', ''))?.description ?? 'None'}.`];
-  });
+  })
+  .sort((first, second) => (first[0] < second[0] ? -1 : first[0] > second[0] ? 1 : 0));
 
 const js_rules = Object.entries(RulintOptionsDefault.js?.rules as Record<string, string | string[]>)
   .filter(([, config]) => (Array.isArray(config) ? config[0] === 'error' : config === 'error'))
   .map(([name]) => {
     return [`[${name}](https://eslint.org/docs/latest/rules/${name})`, `${eslint_rule_descriptions.find((rule) => rule.name === name)?.description ?? 'None'}.`];
-  });
+  })
+  .sort((first, second) => (first[0] < second[0] ? -1 : first[0] > second[0] ? 1 : 0));
 
 const table = json2md([
   {
