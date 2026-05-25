@@ -1,6 +1,7 @@
 import TSESlint from 'typescript-eslint';
 import { builtinRules } from 'eslint/use-at-your-own-risk';
 import ESLintPluginZod from 'eslint-plugin-zod';
+import Prettier from 'prettier';
 import json2md from 'json2md';
 import fs from 'fs/promises';
 import path from 'path';
@@ -65,15 +66,19 @@ const Readme = await fs.readFile(path.join('./', 'README.md'), 'utf-8');
 
 await fs.writeFile(
   path.join('./', 'README.md'),
-  Readme.replace(
-    /<!-- START: rules-table -->[\s\S]*?<!-- END: rules-table -->/g,
-    `<!-- START: rules-table -->
+  await Prettier.format(
+    Readme.replace(
+      /<!-- START: rules-table -->[\s\S]*?<!-- END: rules-table -->/g,
+
+      `<!-- START: rules-table -->
 
 _Rulint adds **${String(rules.length)}** rules to your workspace._
 
 ${table.trim()}
 
 <!-- END: rules-table -->`
+    ),
+    { parser: 'markdown', ...(await Prettier.resolveConfig('./.prettierrc.json')) }
   )
 );
 
