@@ -37,7 +37,7 @@
 
 ## About
 
-Strict ESLint presets for modern TypeScript projects.
+Strict ESLint presets for modern TypeScript.
 
 ## Features
 
