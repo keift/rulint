@@ -22,13 +22,13 @@ const tseslint_rule_metas = Object.entries((RulintOptionsDefault.ts?.plugins?.['
   return { name, description };
 });
 
-const zod_rule_metas = Object.entries((RulintOptionsDefault.js?.plugins?.zod as unknown as Plugin).rules).map(([name, rule]) => {
+const prefer_arrow_functions_rule_metas = Object.entries((RulintOptionsDefault.js?.plugins?.['prefer-arrow-functions'] as unknown as Plugin).rules).map(([name, rule]) => {
   const description = rule.meta.docs.description.endsWith('.') ? rule.meta.docs.description : `${rule.meta.docs.description}.`;
 
   return { name, description };
 });
 
-const prefer_arrow_functions_rule_metas = Object.entries((RulintOptionsDefault.js?.plugins?.['prefer-arrow-functions'] as unknown as Plugin).rules).map(([name, rule]) => {
+const zod_rule_metas = Object.entries((RulintOptionsDefault.js?.plugins?.zod as unknown as Plugin).rules).map(([name, rule]) => {
   const description = rule.meta.docs.description.endsWith('.') ? rule.meta.docs.description : `${rule.meta.docs.description}.`;
 
   return { name, description };
@@ -44,17 +44,17 @@ const tseslint_rule_rows = Object.entries(RulintOptionsDefault.ts?.rules as Reco
   .map(([name]) => [`[${name}](https://typescript-eslint.io/rules/${name.replaceAll('@typescript-eslint/', '')})`, tseslint_rule_metas.find((rule) => rule.name === name.replaceAll('@typescript-eslint/', ''))?.description ?? 'None.'])
   .sort((first, second) => (first[0] < second[0] ? -1 : first[0] > second[0] ? 1 : 0));
 
-const zod_rule_rows = Object.entries(RulintOptionsDefault.js?.rules as Record<string, string | string[]>)
-  .filter(([name, config]) => name.startsWith('zod') && (Array.isArray(config) ? config[0] === 'error' : config === 'error'))
-  .map(([name]) => [`[${name}](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/${name.replaceAll('zod/', '')}.md)`, zod_rule_metas.find((rule) => rule.name === name.replaceAll('zod/', ''))?.description ?? 'None.'])
-  .sort((first, second) => (first[0] < second[0] ? -1 : first[0] > second[0] ? 1 : 0));
-
 const prefer_arrow_functions_rule_rows = Object.entries(RulintOptionsDefault.js?.rules as Record<string, string | string[]>)
   .filter(([name, config]) => name.startsWith('prefer-arrow-functions') && (Array.isArray(config) ? config[0] === 'error' : config === 'error'))
   .map(([name]) => [`[${name}](https://github.com/jamiemason/eslint-plugin-prefer-arrow-functions)`, prefer_arrow_functions_rule_metas.find((rule) => rule.name === name.replaceAll('prefer-arrow-functions/', ''))?.description ?? 'None.'])
   .sort((first, second) => (first[0] < second[0] ? -1 : first[0] > second[0] ? 1 : 0));
 
-const rule_rows = [...eslint_rule_rows, ...tseslint_rule_rows, ...zod_rule_rows, ...prefer_arrow_functions_rule_rows];
+const zod_rule_rows = Object.entries(RulintOptionsDefault.js?.rules as Record<string, string | string[]>)
+  .filter(([name, config]) => name.startsWith('zod') && (Array.isArray(config) ? config[0] === 'error' : config === 'error'))
+  .map(([name]) => [`[${name}](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/${name.replaceAll('zod/', '')}.md)`, zod_rule_metas.find((rule) => rule.name === name.replaceAll('zod/', ''))?.description ?? 'None.'])
+  .sort((first, second) => (first[0] < second[0] ? -1 : first[0] > second[0] ? 1 : 0));
+
+const rule_rows = [...eslint_rule_rows, ...tseslint_rule_rows, ...prefer_arrow_functions_rule_rows, ...zod_rule_rows];
 
 const table = json2md([
   {

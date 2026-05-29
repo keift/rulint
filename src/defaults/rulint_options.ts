@@ -1,7 +1,7 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import eslint_plugin_zod from 'eslint-plugin-zod';
 import eslint_plugin_prefer_arrow_functions from 'eslint-plugin-prefer-arrow-functions';
+import eslint_plugin_zod from 'eslint-plugin-zod';
 
 import type { ESLintConfig } from '../types/eslint_config';
 import type { RulintOptions } from '../types/rulint_options';
@@ -169,8 +169,8 @@ export const RulintOptionsDefault: RulintOptions = {
     files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx', '**/*.js', '**/*.jsx', '**/*.mjs', '**/*.mjsx', '**/*.cjs', '**/*.cjsx'],
     languageOptions: {},
     plugins: {
-      zod: eslint_plugin_zod,
-      'prefer-arrow-functions': eslint_plugin_prefer_arrow_functions
+      'prefer-arrow-functions': eslint_plugin_prefer_arrow_functions,
+      zod: eslint_plugin_zod
     },
     rules: {
       ...js_rules.configs,
