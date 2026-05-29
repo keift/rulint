@@ -43,7 +43,7 @@ export const js_rules: Rules = {
   },
 
   custom: {
-    curly: ['error', 'multi'],
+    curly: 'error',
     eqeqeq: 'error',
     'no-duplicate-imports': 'error',
     'no-eval': 'error',
