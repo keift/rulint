@@ -1,6 +1,7 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import eslint_plugin_zod from 'eslint-plugin-zod';
+import eslint_plugin_prefer_arrow_functions from 'eslint-plugin-prefer-arrow-functions';
 
 import type { ESLintConfig } from '../types/eslint_config';
 import type { RulintOptions } from '../types/rulint_options';
@@ -42,7 +43,8 @@ export const js_rules: Rules = {
   },
 
   custom: {
-    'func-style': ['error', 'expression', { allowArrowFunctions: true }],
+    curly: ['error', 'multi'],
+    eqeqeq: 'error',
     'no-duplicate-imports': 'error',
     'no-eval': 'error',
     'no-new-func': 'error',
@@ -137,9 +139,8 @@ export const js_rules: Rules = {
     'no-useless-return': 'error',
     'object-shorthand': 'error',
     'one-var': ['error', 'never'],
-    'prefer-arrow-callback': 'error',
-    'prefer-template': 'error',
-    eqeqeq: 'error'
+    'prefer-arrow-functions/prefer-arrow-functions': 'error',
+    'prefer-template': 'error'
   }
 };
 
@@ -168,7 +169,8 @@ export const RulintOptionsDefault: RulintOptions = {
     files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx', '**/*.js', '**/*.jsx', '**/*.mjs', '**/*.mjsx', '**/*.cjs', '**/*.cjsx'],
     languageOptions: {},
     plugins: {
-      zod: eslint_plugin_zod
+      zod: eslint_plugin_zod,
+      'prefer-arrow-functions': eslint_plugin_prefer_arrow_functions
     },
     rules: {
       ...js_rules.configs,

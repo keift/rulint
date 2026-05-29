@@ -4,6 +4,7 @@ const dependencies = {
   '@eslint/js': 'latest',
   '@types/node': 'latest',
   eslint: 'latest',
+  'eslint-plugin-prefer-arrow-functions': 'latest',
   'eslint-plugin-zod': 'latest',
   jiti: 'latest',
   typescript: 'latest',
