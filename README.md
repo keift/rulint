@@ -161,7 +161,7 @@ Suggested uses are as follows. We recommend using [Prettier](https://npmjs.com/p
 >   "semi": true,
 >   "singleQuote": true,
 >
->   "printWidth": 9999,
+>   "printWidth": 1000,
 >   "tabWidth": 2,
 >
 >   "trailingComma": "none"
