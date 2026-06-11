@@ -12,6 +12,7 @@ const dependencies = {
 };
 
 const dev_dependencies = {
+  '@rulint/naming': 'latest',
   '@types/json2md': 'latest',
   json2md: 'latest',
   prettier: 'latest',
