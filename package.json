@@ -27,7 +27,6 @@
     "typescript-eslint": "latest"
   },
   "devDependencies": {
-    "@rulint/naming": "latest",
     "@types/json2md": "latest",
     "json2md": "latest",
     "prettier": "latest",

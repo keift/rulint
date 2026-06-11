@@ -161,7 +161,6 @@ export const ts_rules: Rules = {
   }
 };
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 export const RulintOptionsDefault: RulintOptions = {
   enabled: true,
 

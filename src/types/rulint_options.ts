@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-
 import type { ESLintConfig } from './eslint_config';
 
 export type RulintOptions = {
