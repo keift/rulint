@@ -81,7 +81,7 @@ ${table.trim()}
 
 <!-- END: rules-table -->`
     ),
-    { parser: 'markdown', ...(await prettier.resolveConfig('./.prettierrc.json')) }
+    { parser: 'markdown', ...(await prettier.resolveConfig(path.join('./', '.prettierrc.json'))) }
   )
 );
 
