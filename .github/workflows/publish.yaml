@@ -21,6 +21,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
+          node-version: 24
           registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
@@ -33,4 +34,4 @@ jobs:
         run: bun run build
 
       - name: Publish to the NPM
-        run: npm publish --provenance --access public
+        run: npm publish
