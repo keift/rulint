@@ -71,15 +71,15 @@ await fs.writeFile(
   path.join('./', 'README.md'),
   await prettier.format(
     readme_file.replace(
-      /<!-- START: rules-table -->[\s\S]*?<!-- END: rules-table -->/g,
+      /<!-- START: rules_table -->[\s\S]*?<!-- END: rules_table -->/g,
 
-      `<!-- START: rules-table -->
+      `<!-- START: rules_table -->
 
 _Rulint adds **${String(rule_rows.length)}** rules to your workspace._
 
 ${table.trim()}
 
-<!-- END: rules-table -->`
+<!-- END: rules_table -->`
     ),
     { parser: 'markdown', ...(await prettier.resolveConfig(path.join('./', '.prettierrc.json'))) }
   )

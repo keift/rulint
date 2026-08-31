@@ -88,7 +88,9 @@ Briefly as follows.
 ```typescript
 rulint
 │
-├── rulint(options?)
+└── rulint(options?)
+
+rulint/types
 │
 └── type RulintOptions
 ```
@@ -177,7 +179,7 @@ Suggested uses are as follows. We recommend using [Prettier](https://npmjs.com/p
 
 ### Rules
 
-<!-- START: rules-table -->
+<!-- START: rules_table -->
 
 _Rulint adds **203** rules to your workspace._
 
@@ -387,7 +389,7 @@ _Rulint adds **203** rules to your workspace._
 | [zod/require-brand-type-parameter](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/require-brand-type-parameter.md)                       | Require type parameter on `.brand()` functions.                                                                                |
 | [zod/require-error-message](https://github.com/marcalexiei/eslint-zod/blob/main/plugins/eslint-plugin-zod/docs/rules/require-error-message.md)                                     | Enforce that custom refinements include an error message.                                                                      |
 
-<!-- END: rules-table -->
+<!-- END: rules_table -->
 
 ## Links
 
