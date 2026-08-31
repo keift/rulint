@@ -5,6 +5,7 @@ on:
     types: [created]
 
 permissions:
+  contents: read
   id-token: write
 
 jobs:
@@ -33,4 +34,4 @@ jobs:
         run: bun run build
 
       - name: Publish to the NPM
-        run: npm publish --access public --provenance
+        run: npm publish --provenance --access public
