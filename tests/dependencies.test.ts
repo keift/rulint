@@ -7,7 +7,7 @@ const dependencies = {
   'eslint-plugin-prefer-arrow-functions': 'latest',
   'eslint-plugin-zod': 'latest',
   jiti: 'latest',
-  typescript: 'latest',
+  typescript: '6',
   'typescript-eslint': 'latest'
 };
 
