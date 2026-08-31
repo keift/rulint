@@ -1,12 +1,12 @@
 import merge from 'lodash.merge';
 
-import { RulintOptionsDefault } from '../defaults/rulint_options';
+import { rulint_options } from '../defaults/rulint_options';
 
 import type { ESLintConfig } from '../types/eslint_config';
 import type { RulintOptions } from '../types/rulint_options';
 
-export const rulint = (options: RulintOptions = RulintOptionsDefault): ESLintConfig[] => {
-  options = merge({}, RulintOptionsDefault, options);
+export const rulint = (options: RulintOptions = rulint_options): ESLintConfig[] => {
+  options = merge({}, rulint_options, options);
 
   if (options.append?.['no-restricted-imports'] && typeof options.js?.rules?.['no-restricted-imports'] === 'object') {
     options.js.rules['no-restricted-imports'] = [...options.js.rules['no-restricted-imports'], ...options.append['no-restricted-imports']];

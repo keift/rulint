@@ -161,7 +161,7 @@ export const ts_rules: Rules = {
   }
 };
 
-export const RulintOptionsDefault: RulintOptions = {
+export const rulint_options: RulintOptions = {
   enabled: true,
 
   ignores: ['**/dist'],
