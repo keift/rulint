@@ -92,6 +92,7 @@ rulint
 
 rulint/types
 │
+├── type ESLintConfig
 └── type RulintOptions
 ```
 
