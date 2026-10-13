@@ -6,7 +6,7 @@
   "homepage": "https://github.com/keift/rulint",
   "repository": "https://github.com/keift/rulint",
   "scripts": {
-    "tests": "bun run lint && bun test",
+    "tests": "bun check && bun run lint && bun test",
     "retouch": "bun run prettier",
     "build": "tsdown",
     "lint": "eslint ./",

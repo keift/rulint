@@ -138,6 +138,7 @@ Suggested uses are as follows. We recommend using [Prettier](https://npmjs.com/p
 > {
 >   "compilerOptions": {
 >     "strict": true,
+>     "skipLibCheck": true,
 >
 >     "outDir": "./dist",
 >     "target": "ESNext",
