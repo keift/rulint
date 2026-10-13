@@ -15,8 +15,7 @@ const dev_dependencies = {
   '@types/json2md': 'latest',
   json2md: 'latest',
   prettier: 'latest',
-  tsdown: 'latest',
-  unrun: 'latest'
+  tsdown: 'latest'
 };
 
 for (const [_dependency, version] of Object.entries(dependencies)) {

@@ -38,8 +38,7 @@
     "@types/json2md": "latest",
     "json2md": "latest",
     "prettier": "latest",
-    "tsdown": "latest",
-    "unrun": "latest"
+    "tsdown": "latest"
   },
   "keywords": [
     "lint",
