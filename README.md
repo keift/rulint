@@ -12,7 +12,7 @@
   <br/>
   <img src="https://img.shields.io/npm/v/rulint?label=version&color=615fff"/>
   <img src="https://img.shields.io/npm/l/rulint?label=license&color=615fff"/>
-  <img src="https://img.shields.io/npm/dt/rulint?label=downloads&color=00bc7d"/>
+  <img src="https://img.shields.io/npm/dw/rulint?label=downloads&color=00bc7d"/>
   <img src="https://img.shields.io/npm/unpacked-size/rulint?label=size&color=00bc7d"/>
 </div>
 
@@ -138,6 +138,7 @@ Suggested uses are as follows. We recommend using [Prettier](https://npmjs.com/p
 > {
 >   "compilerOptions": {
 >     "strict": true,
+>     "skipLibCheck": true,
 >
 >     "outDir": "./dist",
 >     "target": "ESNext",

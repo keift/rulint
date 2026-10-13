@@ -4,9 +4,9 @@
   "description": "Strict ESLint presets for modern TypeScript.",
   "license": "MIT",
   "homepage": "https://github.com/keift/rulint",
-  "bugs": "https://github.com/keift/rulint/issues",
+  "repository": "https://github.com/keift/rulint",
   "scripts": {
-    "tests": "bun run lint && bun test",
+    "tests": "bun check && bun run lint && bun test",
     "retouch": "bun run prettier",
     "build": "tsdown",
     "lint": "eslint ./",
@@ -40,10 +40,6 @@
     "prettier": "latest",
     "tsdown": "latest",
     "unrun": "latest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/keift/rulint"
   },
   "keywords": [
     "lint",
